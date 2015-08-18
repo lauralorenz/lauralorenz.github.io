@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" 
+	  content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, 
+				   initial-scale=1.0, 
+				   maximum-scale=1.0, 
+				   user-scalable=no">
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+    <!-- Default themes -->
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+    <!-- For LaTeX formating highlighting -->
+    <link rel="stylesheet" href="css/md2reveal_style.css">
+
+    <!--[if lt IE 9]>
+	<script src="reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal"><div class="slides">
+	<section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h2>Offloading Computations to the Cloud</h2><h3>Laura Lorenz</h3><h5>August 17 2015</h5></p>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h5>Obligatory</h5><h1>Big Data*</h1><div class="reference_footnote">*"data that doesn't fit on your laptop"</div><h5>Slide</h5></p>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h2>Plug and Play</h2><h3><a href="www.dominoup.com">Domino</a></h3><h3><a href="https://sense.io/">Sense</a></h3></p>
+</section><section   class="vertical-slide">
+<p>
+<h3>Domino</h3></p>
+<br>
+<pre><code class=python>domino run your_script</code></pre>
+<br>
+<br>
+<figure>
+    <a href="domino.png">
+    <img class="" src="domino.png" >
+    </a>
+    
+    </figure>
+</section><section   class="vertical-slide">
+<p>
+<h3>Sense</h3></p>
+<br>
+<figure>
+    <a href="sense.png">
+    <img class="" src="sense.png" >
+    </a>
+    
+    </figure>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h2>A Bit Of A Refactor</h2><h3><a href="http://aws.amazon.com/lambda/details/">AWS Lambda</a></h3><h3><a href="http://azure.microsoft.com/en-us/services/machine-learning/">Microsoft Azure ML</a></h3></p>
+</section><section   class="vertical-slide">
+<p>
+<h3>AWS Lambda</h3></p>
+<br>
+<figure>
+    <a href="AWSlambda.png">
+    <img class="" src="AWSlambda.png" >
+    </a>
+    
+    </figure>
+</section><section   class="vertical-slide">
+<p>
+<h3>Azure</h3></p>
+<br>
+<figure>
+    <a href="azure.png">
+    <img class="" src="azure.png" >
+    </a>
+    
+    </figure>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h2>SysAdmin Level 1</h2><h3><a href="https://aws.amazon.com/ec2/">AWS EC2</a></h3></p>
+</section><section   class="vertical-slide">
+<p>
+<h3>EC2</h3></p>
+<br>
+<p>
+Provision a new instance via the AWS management console. For example:<br>Ubuntu 14.14 Amazon AMI<br>r3.xlarge EC2 instance<br>200 GB EBS SSD storage<br>default security group</p>
+<br>
+<figure>
+    <a href="ec2.png">
+    <img class="" src="ec2.png" >
+    </a>
+    
+    </figure>
+</section>
+</section><section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h1>Thanks!</h1></p>
+<br>
+<p>
+<h4>@lauranlorenz</h4><div class="reference_footnote">thanks to @thoppe for md2reveal</div></p>
+</section>
+</section>
+    </div></div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      overview: true, height: 900, keyboard: true, touch: true, hideAddressBar: true, rollingLinks: false, mouseWheel: false, controls: true, width: 1200, viewDistance: 3, rtl: false, progress: true, fragments: true, autoSlide: 0, autoSlideStoppable: true, backgroundtransition: "default", transitionSpeed: "default", center: true, embedded: true, transition: "default", maxScale: 1.2, minScale: 0.2, previewLinks: false, margin: 0.05, loop: false, history: true, 
+      
+      theme: Reveal.getQueryHash().theme, 
+      // available themes are in reveal.js/css/theme
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [ { src: 'reveal.js/lib/js/classList.js', condition: function() { 
+    return !document.body.classList; } },
+
+{ src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { 
+    return !!document.querySelector( '[data-markdown]' ); } },
+
+{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { 
+    return !!document.querySelector( '[data-markdown]' ); } },
+
+{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: 
+  function() { hljs.initHighlightingOnLoad(); } },
+
+{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: 
+  function() { return !!document.body.classList; } },
+ ]
+
+      });
+    </script>
+
+  </body>
+</html>

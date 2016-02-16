@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" 
+	  content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, 
+				   initial-scale=1.0, 
+				   maximum-scale=1.0, 
+				   user-scalable=no">
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+
+    <!-- Default themes -->
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+    <link rel="stylesheet" href="" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+    <!-- For LaTeX formating highlighting -->
+    <link rel="stylesheet" href="css/md2reveal_style.css">
+
+    <!--[if lt IE 9]>
+	<script src="reveal.js/lib/js/html5shiv.js"></script>
+	<![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal"><div class="slides">
+	<section class="vertical-stack">
+<section   class="vertical-slide">
+<p>
+<h1>md2reveal</h1><a href="https://github.com/thoppe/md2reveal">python tool</a> to convert extended markdown to reveal.js</p>
+</section>
+</section><section class="vertical-stack">
+<section id="formating"  class="vertical-slide">
+<p>
+<h2>slide control</h2></p>
+<pre><code class=python>====  horizontal slide
+====* vertical slide
+====+ slide pause
+==== [name] named slide, useful for linking</code></pre>
+<br>
+<p>
+<h2>text formatting</h2></p>
+<pre><code class=python>#      h1     (headers) 
+##     h2     (headers) etc for h6
+*text* strong (bold)
+_text_ emph   (italics)
+$LaTeX$ LaTeX rendered to SVG
+       four spaces or \t is a code block</code></pre>
+<br>
+<p>
+<em>formating</em> in <strong>action!</strong><h2>\begin{align*}%s\end{align*}</h2></p>
+<br>
+<p>
+Small inline equation \begin{align*}%s\end{align*}.</p>
+</section><section   class="vertical-slide">
+<p>
+<h3>images</h3></p>
+<pre><code class=python>!(image src)[optional image link] &lt;&lt;options&gt;&gt; caption markdown
+...
+!(cc.svg) &lt;&lt;width:200; transparent&gt;&gt;  this is the cc _caption_</code></pre>
+<figure>
+    <a href="cc.svg">
+    <img class="transparent_image" src="cc.svg" width="200">
+    </a>
+    <figcaption>this is the cc <em>caption</em></figcaption>
+    </figure>
+<br>
+<p>
+<h3>movies</h3></p>
+<pre><code class=python>(image src.m4v)[optional image link] &lt;&lt;options&gt;&gt;
+...
+!(small.m4v) &lt;&lt;height:200&gt;&gt;</code></pre>
+<figure>
+    <video autoplay loop height="200">  
+    <source src="small.m4v" type="video/mp4"> 
+    </video>
+    
+    </figure>
+</section><section   class="vertical-slide">
+<p>
+<h2>Extra content</h2></p>
+<br>
+<p>
+You can include extra content from other files by using</p>
+<br>
+<pre><code class=python>{include:&quot;filename&quot;}
+...
+{include:&quot;include_example.md&quot;}</code></pre>
+</section><section   class="vertical-slide">
+<p>
+<h3>links & footnotes</h3></p>
+<pre><code class=python>[link text](link src)
+&amp;&amp; Footnote text</code></pre>
+<p>
+For example <a href="https://www.google.com">google</a>, or <a href="#/formating">formating page</a></p>
+<br>
+<p>
+<div class="reference_footnote">A really important footnote or reference!, <a href="https://www.google.com">google</a><br>This spans two lines!</div></p>
+<br>
+<p>
+<h3>Comments in md slides</h3></p>
+<pre><code class=python>% This line won't be displayed below since it starts with a &quot;%&quot;</code></pre>
+<br>
+<p>
+</p>
+</section><section id="ZoomCC_Slide" data-background-size="30%" data-background="cc.svg" data-background-transition="zoom" class="vertical-slide">
+<br>
+</section>
+</section>
+    </div></div>
+
+    <script src="reveal.js/lib/js/head.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
+
+    <script>
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      overview: true, height: 900, keyboard: true, touch: true, hideAddressBar: true, rollingLinks: false, mouseWheel: false, controls: true, width: 1200, viewDistance: 3, rtl: false, progress: true, fragments: true, autoSlide: 0, autoSlideStoppable: true, backgroundtransition: "default", transitionSpeed: "default", center: true, embedded: true, transition: "default", maxScale: 1.2, minScale: 0.2, previewLinks: false, margin: 0.05, loop: false, history: true, 
+      
+      theme: Reveal.getQueryHash().theme, 
+      // available themes are in reveal.js/css/theme
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [ { src: 'reveal.js/lib/js/classList.js', condition: function() { 
+    return !document.body.classList; } },
+
+{ src: 'reveal.js/plugin/markdown/showdown.js', condition: function() { 
+    return !!document.querySelector( '[data-markdown]' ); } },
+
+{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { 
+    return !!document.querySelector( '[data-markdown]' ); } },
+
+{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: 
+  function() { hljs.initHighlightingOnLoad(); } },
+
+{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: 
+  function() { return !!document.body.classList; } },
+ ]
+
+      });
+    </script>
+
+  </body>
+</html>
